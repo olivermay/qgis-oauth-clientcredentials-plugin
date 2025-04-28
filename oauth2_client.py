@@ -87,7 +87,7 @@ class OAuth2ClientCredentials(QObject):
                 authcfg.setUri(self.resource)
                 authcfg.setConfig("Authorization", f"Bearer {self.token}")
                 auth_manager.storeAuthenticationConfig(authcfg)
-                self.log_debug("Authentication configuration 'GIPOD Synductis Authenticatie' created successfully.")
+                self.log_debug("Authentication configuration 'GIPOD Authenticatie' created successfully.")
 
         except Exception as e:
             self.log_error(f"Failed to create or update authentication configuration: {str(e)}")
