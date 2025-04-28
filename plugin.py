@@ -11,7 +11,7 @@ class OAuth2ClientCredentialsPlugin:
         self.action = None
 
     def initGui(self):
-        self.action = QAction("GIPOD Synductis Authenticatie", self.iface.mainWindow())
+        self.action = QAction("GIPOD CCG Authenticatie", self.iface.mainWindow())
         self.action.triggered.connect(self.create_authentication)
         self.iface.addPluginToMenu("&GIPOD Auth", self.action)
         self.iface.addToolBarIcon(self.action)
