@@ -68,7 +68,7 @@ class OAuth2ClientCredentials(QObject):
             for cfg_id in config_ids:
                 cfg = QgsAuthMethodConfig()
                 auth_manager.loadAuthenticationConfig(cfg_id, cfg)
-                if cfg.isValid() and cfg.name() == "GIPOD Synductis Authenticatie" and cfg.method() == "APIHeader":
+                if cfg.isValid() and cfg.name() == "GIPOD Authenticatie" and cfg.method() == "APIHeader":
                     existing_configs.append(cfg)
 
             if existing_configs:
@@ -83,7 +83,7 @@ class OAuth2ClientCredentials(QObject):
                     self.log_debug("Authentication configuration updated with refreshed token.")
             else:
                 authcfg = QgsAuthMethodConfig("APIHeader")
-                authcfg.setName("GIPOD Synductis Authenticatie")
+                authcfg.setName("GIPOD Authenticatie")
                 authcfg.setUri(self.resource)
                 authcfg.setConfig("Authorization", f"Bearer {self.token}")
                 auth_manager.storeAuthenticationConfig(authcfg)
